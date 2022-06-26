@@ -1,2 +1,2 @@
 # QIrc
-An IRC client based Qt
+An IRC client based on Qt Toolkit
