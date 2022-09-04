@@ -1,0 +1,255 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>actionForm</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>actionForm</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>276</width>
+            <height>292</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Action</string>
+    </property>
+    <widget class="QLayoutWidget">
+        <property name="name">
+            <cstring>layout4</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>10</y>
+                <width>256</width>
+                <height>272</height>
+            </rect>
+        </property>
+        <vbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout8</cstring>
+                </property>
+                <hbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <spacer>
+                        <property name="name">
+                            <cstring>spacer2</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Horizontal</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Fixed</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>17</width>
+                                <height>20</height>
+                            </size>
+                        </property>
+                    </spacer>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>nickTextLabel</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Nick:</string>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>nickLineEdit</cstring>
+                        </property>
+                    </widget>
+                </hbox>
+            </widget>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout4</cstring>
+                </property>
+                <hbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>channeltextLabel</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Channel:</string>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>lineEdit2</cstring>
+                        </property>
+                    </widget>
+                </hbox>
+            </widget>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout3</cstring>
+                </property>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QPushButton" row="2" column="1">
+                        <property name="name">
+                            <cstring>takeOpsButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Take Ops</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton" row="4" column="2">
+                        <property name="name">
+                            <cstring>versionButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Version</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton" row="0" column="1">
+                        <property name="name">
+                            <cstring>privChatButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Priv Chat</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton" row="4" column="0">
+                        <property name="name">
+                            <cstring>pingButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Ping</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton" row="0" column="0">
+                        <property name="name">
+                            <cstring>dccChatButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>DCC Chat</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton" row="1" column="2">
+                        <property name="name">
+                            <cstring>whoWasButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>WhoWas</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton" row="3" column="0">
+                        <property name="name">
+                            <cstring>banButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Ban</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton" row="2" column="0">
+                        <property name="name">
+                            <cstring>giveOpsButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Give Ops</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton" row="1" column="1">
+                        <property name="name">
+                            <cstring>whoIsButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>WhoIs</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton" row="0" column="2">
+                        <property name="name">
+                            <cstring>fileSendButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>File Send</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton" row="5" column="2">
+                        <property name="name">
+                            <cstring>closefileSendButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Close</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton" row="5" column="1">
+                        <property name="name">
+                            <cstring>ignoreButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Ignore</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton" row="4" column="1">
+                        <property name="name">
+                            <cstring>fingerButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Finger</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton" row="2" column="2">
+                        <property name="name">
+                            <cstring>userInfoButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>User Info</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton" row="5" column="0">
+                        <property name="name">
+                            <cstring>notifyButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Notify</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton" row="3" column="1">
+                        <property name="name">
+                            <cstring>kickButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Kick</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton" row="3" column="2">
+                        <property name="name">
+                            <cstring>timeButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Time</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton" row="1" column="0">
+                        <property name="name">
+                            <cstring>whoButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Who</string>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+        </vbox>
+    </widget>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
