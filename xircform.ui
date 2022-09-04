@@ -1,0 +1,48 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>xIrcForm</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>xIrcForm</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>572</width>
+            <height>349</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>xIrcDisplay</string>
+    </property>
+    <vbox>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QTextBrowser">
+            <property name="name">
+                <cstring>Display</cstring>
+            </property>
+            <property name="minimumSize">
+                <size>
+                    <width>550</width>
+                    <height>300</height>
+                </size>
+            </property>
+            <property name="vScrollBarMode">
+                <enum>AlwaysOn</enum>
+            </property>
+            <property name="textFormat">
+                <enum>LogText</enum>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>lineEdit1</cstring>
+            </property>
+        </widget>
+    </vbox>
+</widget>
+<pixmapinproject/>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
