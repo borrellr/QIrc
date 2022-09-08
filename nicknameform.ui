@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>290</width>
-            <height>183</height>
+            <width>340</width>
+            <height>203</height>
         </rect>
     </property>
     <property name="caption">
@@ -23,8 +23,8 @@
             <rect>
                 <x>11</x>
                 <y>11</y>
-                <width>268</width>
-                <height>161</height>
+                <width>300</width>
+                <height>170</height>
             </rect>
         </property>
         <grid>
@@ -127,5 +127,13 @@
         </grid>
     </widget>
 </widget>
+<connections>
+    <connection>
+        <sender>cancelPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>nickNameForm</receiver>
+        <slot>reject()</slot>
+    </connection>
+</connections>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

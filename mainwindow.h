@@ -4,6 +4,7 @@
 #include <qmainwindow.h>
 #include <qstring.h>
 #include "xircform.h"
+#include "actionform.h"
 
 class QAction;
 
@@ -37,8 +38,6 @@ private:
   QString *nickName;
 
   xIrcForm *mainForm;
-  QString *serverName;
-  int port;
 
   QPopupMenu *fileMenu;
   QPopupMenu *nickMenu;

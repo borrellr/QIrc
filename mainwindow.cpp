@@ -4,6 +4,8 @@
 #include <qmenubar.h>
 #include <qmessagebox.h>
 
+#include "actionform.h"
+#include "nicknameform.h"
 #include "xircform.h"
 #include "mainwindow.h"
 
@@ -137,10 +139,16 @@ void MainWindow::showFolksOnline()
 
 void MainWindow::action()
 {
+   actionForm dialog(this);
+
+   dialog.exec();
 }
 
 void MainWindow::changeNick()
 {
+   nickNameForm dialog(this);
+
+   dialog.exec();
 }
 
 void MainWindow::serverList()
