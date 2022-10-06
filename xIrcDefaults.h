@@ -22,6 +22,8 @@ public:
   QString get(QString key);
 
 private:
+  void loadData(QFile &f);
+  void openDefaults(QString fn);
   bool changed;
   defaultMap dmap;
 };

@@ -4,7 +4,8 @@
 #include <qmainwindow.h>
 #include <qstring.h>
 #include "xircform.h"
-#include "actionform.h"
+#include "xIrcDefaults.h"
+#include "xIrcQuitDialog.h"
 
 class QAction;
 
@@ -24,6 +25,7 @@ private slots:
   void serverList();
   void ignoreList();
   void notifyList();
+  void xIrcQuit();
 
 private:
   void createActions();
@@ -38,6 +40,8 @@ private:
   QString *nickName;
 
   xIrcForm *mainForm;
+  QString *serverName;
+  int port;
 
   QPopupMenu *fileMenu;
   QPopupMenu *nickMenu;
@@ -58,6 +62,9 @@ private:
 
   QAction *aboutAct;
   QAction *aboutQtAct;
+
+  xIrcDefaults Defaults;
+  xIrcQuitDialog *quitDialog;
 };
 
 #endif

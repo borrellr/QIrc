@@ -8,33 +8,11 @@ xIrcDefaults::~xIrcDefaults()
 {
 }
 
-void xIrcDefaults::load()
+void xIrcDefaults::loadData(QFile &f)
 {
-   QDir d(getenv("HOME"));
-   QFile f(d.filePath(".xirc"));
-   if (f.exists()) {
-      if (!f.open(IO_ReadOnly)) {
-         qWarning("Missing local .xirc file");
-      }
-   } else {
-      d = QDir::root();
-      d.cd("usr/local/lib");
-      if (d.exists("xIrc")) {
-         d.cd("xIrc");
-         f.setName(d.filePath("xIrc.defaults"));
-         if (f.exists()) {
-            if (!f.open(IO_ReadOnly)) {
-               qWarning("Missing xIrc.defaults file");
-               return;
-            }
-         }
-      }
-   }
    QTextStream stream(&f);
-   QString line;
-   QString line2;
-   QString key;
-   QString value;
+   QString line, line2, key, value;
+   bool dbg = false;
    int i = 0;
 
    while ( !stream.atEnd() ) {
@@ -48,20 +26,53 @@ void xIrcDefaults::load()
                key = line.section("=", 0, 0);
                value = line.section("=", 1, 1);
                dmap[key.upper()] = value.simplifyWhiteSpace();
-               printf( "%3d: %s\n", i++, line.latin1() );
+               if (dbg) 
+                  printf( "%3d: %s\n", i++, line.latin1() );
             } else {
                line2.remove("\\");
                line2 = line2.simplifyWhiteSpace();
                key = line2.section("=", 0, 0);
                value = line2.section("=", 1, 1);
                dmap[key.upper()] = value.simplifyWhiteSpace();
-               printf( "%3d: %s\n", i++, line2.latin1() );
+               if (dbg) 
+                  printf( "%3d: %s\n", i++, line2.latin1() );
                line2 = "";
             }
          }
       }
    }
-   f.close();
+}
+
+void xIrcDefaults::openDefaults(QString filename)
+{
+   QFile f(filename);
+
+   if (f.exists()) {
+      if (!f.open(IO_ReadOnly)) {
+         qWarning("Missing file %s\n", filename.latin1());
+         return;
+      }
+      loadData(f);
+      f.close();
+   } else {
+      printf("File %s does not exists\n", filename.latin1());
+   }
+}
+
+void xIrcDefaults::load()
+{
+   bool dbg = false;
+   QString filename("/usr/local/lib/xIrc/xIrc.defaults");
+
+   // Load global defaults
+   if (dbg) 
+      printf("filename is %s\n", filename.latin1());
+   openDefaults(filename);
+
+   // Load user defaults
+   filename = getenv("HOME");
+   filename.append("/.xIrc/xIrc.ini");
+   openDefaults(filename);
 }
 
 void xIrcDefaults::show()

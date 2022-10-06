@@ -4,10 +4,9 @@
 #include <qmenubar.h>
 #include <qmessagebox.h>
 
-#include "actionform.h"
-#include "nicknameform.h"
 #include "xircform.h"
 #include "mainwindow.h"
+#include "xIrcQuitDialog.h"
 
 MainWindow::MainWindow(QWidget *parent, const char *name)
     : QMainWindow(parent, name)
@@ -23,6 +22,8 @@ MainWindow::MainWindow(QWidget *parent, const char *name)
   readSettings();
 
   setCaption("xIrc");
+
+  quitDialog = new xIrcQuitDialog(Defaults);
 }
 
 void MainWindow::createActions()
@@ -37,7 +38,7 @@ void MainWindow::createActions()
 
   exitAct = new QAction(tr("E&xit"), tr("Ctrl-Q"), this);
   exitAct->setStatusTip(tr("Exit xIrc"));
-  connect(exitAct, SIGNAL(activated()), this, SLOT(close()));
+  connect(exitAct, SIGNAL(activated()), this, SLOT(xIrcQuit()));
 
   showAct = new QAction(tr("Show Folks Online"), 0, this);
   showAct->setStatusTip(tr("Show Folks Online"));
@@ -110,6 +111,7 @@ void MainWindow::createStatusBar()
 
 void MainWindow::readSettings()
 {
+  Defaults.load();
 }
 
 void MainWindow::writeSettings()
@@ -139,16 +141,10 @@ void MainWindow::showFolksOnline()
 
 void MainWindow::action()
 {
-   actionForm dialog(this);
-
-   dialog.exec();
 }
 
 void MainWindow::changeNick()
 {
-   nickNameForm dialog(this);
-
-   dialog.exec();
 }
 
 void MainWindow::serverList()
@@ -161,4 +157,14 @@ void MainWindow::ignoreList()
 
 void MainWindow::notifyList()
 {
+}
+
+void MainWindow::xIrcQuit()
+{
+   quitDialog->show();
+   quitDialog->raise();
+   quitDialog->setActiveWindow();
+   if (quitDialog->exec() != QDialog::Rejected) {
+      qApp->quit();
+   }
 }
