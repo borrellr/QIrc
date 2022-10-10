@@ -1,14 +1,14 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>actionForm</class>
+<class>actionDialog</class>
 <widget class="QDialog">
     <property name="name">
-        <cstring>actionForm</cstring>
+        <cstring>actionDialog</cstring>
     </property>
     <property name="geometry">
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>276</width>
+            <width>291</width>
             <height>292</height>
         </rect>
     </property>
@@ -23,8 +23,8 @@
             <rect>
                 <x>10</x>
                 <y>10</y>
-                <width>256</width>
-                <height>272</height>
+                <width>271</width>
+                <height>274</height>
             </rect>
         </property>
         <vbox>
@@ -89,7 +89,7 @@
                     </widget>
                     <widget class="QLineEdit">
                         <property name="name">
-                            <cstring>lineEdit2</cstring>
+                            <cstring>channelLIneEdit</cstring>
                         </property>
                     </widget>
                 </hbox>
@@ -251,5 +251,13 @@
         </vbox>
     </widget>
 </widget>
+<connections>
+    <connection>
+        <sender>closefileSendButton</sender>
+        <signal>clicked()</signal>
+        <receiver>actionDialog</receiver>
+        <slot>reject()</slot>
+    </connection>
+</connections>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>
