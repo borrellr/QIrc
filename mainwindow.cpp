@@ -7,6 +7,7 @@
 #include "xircform.h"
 #include "mainwindow.h"
 #include "xIrcQuitDialog.h"
+#include "nicknameform.h"
 
 MainWindow::MainWindow(QWidget *parent, const char *name)
     : QMainWindow(parent, name)
@@ -18,12 +19,10 @@ MainWindow::MainWindow(QWidget *parent, const char *name)
   createMenus();
   createToolBars();
   createStatusBar();
-
   readSettings();
+  createDialogs();
 
   setCaption("xIrc");
-
-  quitDialog = new xIrcQuitDialog(Defaults);
 }
 
 void MainWindow::createActions()
@@ -109,6 +108,12 @@ void MainWindow::createStatusBar()
 {
 }
 
+void MainWindow::createDialogs()
+{
+  quitDialog = new xIrcQuitDialog(Defaults);
+  nickDialog = new nickNameDialog(this);
+}
+
 void MainWindow::readSettings()
 {
   Defaults.load();
@@ -145,6 +150,22 @@ void MainWindow::action()
 
 void MainWindow::changeNick()
 {
+  QString nicks(Defaults.get("Nicks"));
+  QStringList strList = QStringList::split(' ', nicks);
+
+  nickDialog->insertStringList(strList);
+  nickDialog->show();
+  nickDialog->raise();
+  if (nickDialog->exec()) {
+     QString str(nickDialog->text());
+     if (str.isEmpty()) {
+        printf("The returned string is empty\n");
+     } else {
+        currNickName = str;
+        str.prepend("xIrc - ");
+        setCaption(str);
+     }
+  }
 }
 
 void MainWindow::serverList()

@@ -6,6 +6,7 @@
 #include "xircform.h"
 #include "xIrcDefaults.h"
 #include "xIrcQuitDialog.h"
+#include "nicknameform.h"
 
 class QAction;
 
@@ -32,6 +33,7 @@ private:
   void createMenus();
   void createToolBars();
   void createStatusBar();
+  void createDialogs();
   void readSettings();
   void writeSettings();
 
@@ -65,6 +67,10 @@ private:
 
   xIrcDefaults Defaults;
   xIrcQuitDialog *quitDialog;
+  QString quitMsg;
+
+  nickNameDialog *nickDialog;
+  QString currNickName;
 };
 
 #endif

@@ -19,3 +19,8 @@ void xIrcQuitDialog::setDefaultMsg()
 {
    quitLineEdit->setText(quitMsg);
 }
+
+QString xIrcQuitDialog::text()
+{
+   return quitLineEdit->text();
+}

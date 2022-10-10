@@ -13,12 +13,14 @@ public:
    ~xIrcQuitDialog(){};
 
    void setQuitMsg(QString& msg);
+   QString text();
 
 public slots:
    void setDefaultMsg();
 
 private:
    QString quitMsg;
+   QString currMsg;
 };
 
 #endif
